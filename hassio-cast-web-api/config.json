@@ -1,0 +1,25 @@
+{
+  "name": "hassio-cast-web-api",
+  "version": "0.0.1",
+  "slug": "hassio-cast-web-api",
+  "description": "Home Assistant cast-web-api server",
+  "url":"https://github.com/haruny/hassio-cast-web-api",
+  "startup": "application",
+  "boot": "auto",
+  "host_network" : false,
+  "arch": [
+    "armhf",
+    "amd64"
+  ],
+  "map": [
+    "share:rw",
+    "ssl"
+  ],
+  "options": {
+    },
+  "schema": {
+    },
+  "ports": {
+    "1627/tcp": 1627
+  }
+}
