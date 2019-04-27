@@ -8,18 +8,19 @@ ENV NODE_ENV production
 RUN apk add --update nodejs
 RUN apk add --update nodejs-npm
 
-WORKDIR /usr/src/app
+WORKDIR /
 
 # Install app dependencies
-COPY package.json .
-RUN npm install
+RUN npm install cast-web-api -g -O
 
-# Bundle app source
-COPY . .
+#WORKDIR /usr/lib/node_modules/cast-web-api
 
 # Copy data for add-on
-COPY run.sh /
-RUN chmod a+x /run.sh
+#COPY run.sh /
+#RUN chmod a+x /run.sh
 
-CMD [ "/run.sh" ]
+EXPOSE 3000
 
+#CMD [ "/run.sh" ]
+
+ENTRYPOINT ["/usr/bin/cast-web-api"]
